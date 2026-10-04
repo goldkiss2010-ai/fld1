@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.venv/
+output/
+*.fld1
+!samples/*.fld1
