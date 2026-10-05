@@ -39,13 +39,19 @@ python -m unittest discover -s tests -v
 参照実装は理解と照合のための最小例です。数百万粒子では、生成側で連続配列の一括入出力を使えます。
 読取時にはヘッダー・stride・ファイルサイズを検査します。各レコードの値域は生成側の責任です。
 
-## 二つのリポジトリ
+## DCC Handoff family と責務
 
-このリポジトリで思想、仕様、規約、読み書き例、将来の拡張案を管理します。
-[AE Handoff](https://github.com/goldkiss2010-ai/ae-handoff)では、AEプラグイン、粒子場生成コード、
-設定、作例を管理します。参照ツールはcore/に実体を収録し、追加のサブモジュール取得は不要です。
-AEプラグインのソース・ビルド設定・開発履歴は非公開で維持し、ビルド済みプラグイン、
-使い方、粒子場、生成コードを配布する方針です。FLD1仕様・参照ツールはこちらで提供します。
+このリポジトリでFLD1の思想、仕様、固定規約、読み書き例、将来の拡張案を管理します。
+
+[DCC Handoff](https://github.com/goldkiss2010-ai/dcc-handoff)は、FLD1で状態を渡し、
+観察・投影・描画・合成を各DCC側に残すcross-hostの上位設計をまとめます。
+
+[AE Handoff](https://github.com/goldkiss2010-ai/ae-handoff)はAfter Effects実装、
+[Fusion Handoff](https://github.com/goldkiss2010-ai/fusion-handoff)はFusion / DaVinci Resolve実装です。
+
+FLD1自体はどのHandoff実装からも独立しています。ホスト固有のUI、投影、ラスタライズ、
+合成、配布方法をFLD1のバイナリ規約へ持ち込みません。AE Handoffのcore/には参照ツールの
+実体コピーがありますが、フォーマット規約の正本はこのリポジトリです。
 
 メッシュ、可変粒子数、不連続、任意の追加属性などはv1には含めません。
 FLD2や別プロファイルは必要性を確認してから設計し、v1の意味とバイト配置は後から変更しません。
