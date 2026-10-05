@@ -35,6 +35,8 @@ python examples/inspect_cache.py orbit.fld1 --frame 12
 python -m unittest discover -s tests -v
 ```
 
+大きな確認用データとして、ホスト非依存の [FLD1 Asset Pack v01](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/FLD1_Asset_Pack_v01.zip) を公開しています。2万粒子の5素材と100万粒子のVortex Ringを収録し、AE Handoff、Fusion Handoff、その他のFLD1 readerで同じキャッシュを利用できます。
+
 円運動の例は旧sample_rate=12で書き出すため、続けて換算します。流体シミュレーションではありません。
 参照実装は理解と照合のための最小例です。数百万粒子では、生成側で連続配列の一括入出力を使えます。
 読取時にはヘッダー・stride・ファイルサイズを検査します。各レコードの値域は生成側の責任です。
