@@ -37,6 +37,8 @@ python examples/inspect_cache.py orbit.fld1 --frame 12
 python -m unittest discover -s tests -v
 ```
 
+For larger examples, the host-independent [FLD1 Asset Pack v01](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/FLD1_Asset_Pack_v01.zip) contains five 20K fields and a 1M-particle Vortex Ring. The same caches can be read by AE Handoff, Fusion Handoff, or another FLD1 consumer.
+
 The orbit example is analytic, not a fluid simulation, and writes a legacy
 rate-12 cache before normalization. The reference implementation prioritizes
 clarity and interoperability over bulk-array performance. It validates header,
