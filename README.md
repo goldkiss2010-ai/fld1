@@ -42,13 +42,23 @@ rate-12 cache before normalization. The reference implementation prioritizes
 clarity and interoperability over bulk-array performance. It validates header,
 stride and file size; record-domain constraints remain the producer's responsibility.
 
-## Repositories and scope
+## DCC Handoff family and scope
 
 This repository owns the FLD1 contract, byte layout, design, reference tools and
-future-version proposals. [AE Handoff](https://github.com/goldkiss2010-ai/ae-handoff)
-provides the Windows AE consumer as a compiled plugin, usage guides and particle-field
-generators. It includes a materialized copy of these reference tools under `core/`.
-AE plugin source, build configuration and private development history are excluded.
+future-version proposals.
+
+[DCC Handoff](https://github.com/goldkiss2010-ai/dcc-handoff) documents the cross-host
+architecture: FLD1 carries state while each DCC adapter owns observation and presentation.
+
+[AE Handoff](https://github.com/goldkiss2010-ai/ae-handoff) is the After Effects consumer,
+distributed as a compiled plugin with usage guides and particle-field generators.
+[Fusion Handoff](https://github.com/goldkiss2010-ai/fusion-handoff) is the Fusion /
+DaVinci Resolve Fuse implementation.
+
+FLD1 is intentionally independent of all of them. Host-specific UI, projection,
+rasterization, compositing and deployment do not become part of the binary contract.
+AE Handoff includes a materialized copy of the reference tools under `core/`; the
+canonical format contract remains here.
 
 Version 1 has no mesh topology, explicit particle IDs, variable populations,
 nonuniform timestamps, embedded metadata, discontinuity flags or named extra
